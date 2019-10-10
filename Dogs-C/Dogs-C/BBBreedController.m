@@ -14,7 +14,7 @@ static NSString *const kfetchBreedsBaseURLString = @"https://dog.ceo/api/breeds/
 static NSString *const kfetchImageBreedBaseURLString = @"https://dog.ceo/api/breed";
 static NSString *const kbreedImagesComponent = @"images";
 
-@implementation BBBreedController
+@implementation BBBreedController 
 
 + (instancetype)sharedInstance
 {
@@ -39,7 +39,7 @@ static NSString *const kbreedImagesComponent = @"images";
         }
         if (response)
         {
-            NSLog(@"Error getting response");
+            NSLog(@"%@", response);
         }
         if (data)
         {
@@ -68,18 +68,88 @@ static NSString *const kbreedImagesComponent = @"images";
     }]resume];
 } // End of function
 
-//- (void)fetchBreedImageURL:(BBBreed *)breed completion:(void (^)(NSArray * _Nonnull))completion
-//{
-//    NSURL *baseURL = [NSURL URLWithString:kfetchBreedsBaseURLString];
-//    NSURL *breedURL = [baseURL URLByAppendingPathComponent:breed.name];
-//    NSURL *finalURL = [breedURL URLByAppendingPathComponent:kbreedImagesComponent];
-//
-//    [[[NSURLSession sharedSession] dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        if (error)
-//        {
-//            NSLog(@"@", error)
-//            completion()
-//        }
-//    }]resume];
-//} // End of funtion
+- (void)fetchBreedImageURL:(BBBreed *)breed completion:(void (^)(NSArray * _Nonnull))completion
+{
+    NSURL *baseURL = [NSURL URLWithString:kfetchImageBreedBaseURLString];
+    NSURL *breedURL = [baseURL URLByAppendingPathComponent:breed.name];
+    NSURL *finalURL = [breedURL URLByAppendingPathComponent:kbreedImagesComponent];
+
+    [[[NSURLSession sharedSession] dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error)
+        {
+            NSLog(@"%@", error);
+            completion(@[]);
+            return;
+        }
+        if (response)
+        {
+            NSLog(@"%@", response);
+        }
+        if (data)
+        {
+            NSDictionary *imageDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            if (error)
+            {
+                NSLog(@"%@", error);
+                completion(@[]);
+                return;
+            }
+            NSMutableArray *imageArray = imageDictionary[@"message"];
+            completion(imageArray);
+        }
+    }]resume];
+} // End of funtion
+
+- (void)fetchSubbreedImageURL:(BBSubbreed *)subbreed breed:(BBBreed *)breed completion:(void (^)(NSArray * _Nonnull))completion
+{
+    NSURL *baseURL = [NSURL URLWithString:kfetchImageBreedBaseURLString];
+    NSURL *breedURL = [baseURL URLByAppendingPathComponent:breed.name];
+    NSURL *subbreedURL = [breedURL URLByAppendingPathComponent:subbreed.name];
+    NSURL *finalURL = [subbreedURL URLByAppendingPathComponent:kbreedImagesComponent];
+    
+    [[[NSURLSession sharedSession] dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error)
+        {
+            NSLog(@"%@", error);
+            completion(@[]);
+            return;
+        }
+        if (response)
+        {
+            NSLog(@"%@", response);
+        }
+        if (data)
+        {
+            NSDictionary *imageDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            if (error)
+            {
+                NSLog(@"%@", error);
+                completion(@[]);
+                return;
+            }
+            NSMutableArray *imageArray = imageDictionary[@"message"];
+            completion(imageArray);
+        }
+    }]resume];
+} // End of funtion
+
+- (void)fetchImageDataFromURL:(NSURL *)url completion:(void (^)(NSData * _Nullable))completion
+{
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error)
+        {
+            NSLog(@"%@", error);
+            completion(nil);
+            return;
+        }
+        if (response)
+        {
+            NSLog(@"%@", response);
+        }
+        if (data)
+        {
+            completion(data);
+        }
+    }]resume];
+}
 @end

@@ -18,10 +18,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[BBBreedController sharedInstance] fetchBreeds:^(NSArray<BBBreed *> * _Nonnull breeds) {
-        NSLog(@"%@", breeds);
-    }];
-    return YES;
+//    [[BBBreedController sharedInstance] fetchBreeds:^(NSArray<BBBreed *> * _Nonnull breeds) {
+//    [BBBreedController.sharedInstance fetchBreeds:^(NSArray<BBBreed *> * _Nonnull breeds)
+//    {
+//
+//
+//
+//        NSLog(@"%@", breeds);
+//        BBBreed *breed = breeds[0];
+//
+//        [[BBBreedController sharedInstance] fetchBreedImageURL:breed completion:^(NSArray * _Nonnull imagesArray) {
+//            NSLog(@"%@", breed);
+//        }];
+        return YES;
+//    }];
+//    [BBBreedController sharedInstance] fetchBreedImageURL:(@"hound") completion:^(NSArray * _Nonnull) {
+//
+//    }
 }
 
 
