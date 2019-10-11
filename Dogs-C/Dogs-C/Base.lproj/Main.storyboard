@@ -32,9 +32,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Aze-US-2ff" kind="show" id="RQQ-Bg-Ul5"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,7 +41,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Breeds" id="c2k-eb-4PG"/>
                     <connections>
-                        <segue destination="tdG-mo-jPt" kind="show" id="SaX-eI-u4E"/>
+                        <segue destination="tdG-mo-jPt" kind="show" identifier="toCollectionVC" id="SaX-eI-u4E"/>
+                        <segue destination="Aze-US-2ff" kind="show" identifier="toSubbreedVC" id="dr7-ho-g3F"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yge-BN-ekD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -60,19 +58,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MRN-PM-RKQ">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="197" height="197"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6Hm-kj-mSe">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="6Hm-kj-mSe">
+                                <rect key="frame" x="0.0" y="0.0" width="197" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XW9-2I-0S1">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="197" height="197"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igL-V8-SkT">
+                                            <rect key="frame" x="8" y="8" width="181" height="181"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="igL-V8-SkT" firstAttribute="leading" secondItem="XW9-2I-0S1" secondAttribute="leading" constant="8" id="ASU-W2-Un6"/>
+                                        <constraint firstAttribute="trailing" secondItem="igL-V8-SkT" secondAttribute="trailing" constant="8" id="GCE-Ar-agy"/>
+                                        <constraint firstItem="igL-V8-SkT" firstAttribute="top" secondItem="XW9-2I-0S1" secondAttribute="top" constant="8" id="Wlj-V5-xb1"/>
+                                        <constraint firstAttribute="bottom" secondItem="igL-V8-SkT" secondAttribute="bottom" constant="8" id="upv-xp-Ugl"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="197" height="197"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -84,7 +94,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXk-nj-bH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1885" y="548"/>
+            <point key="canvasLocation" x="1884.057971014493" y="547.76785714285711"/>
         </scene>
         <!--Subbreed-->
         <scene sceneID="E5x-zj-Zht">
@@ -95,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Psz-oE-AIn" style="IBUITableViewCellStyleDefault" id="Uwn-WJ-sIC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subbreedCell" textLabel="Psz-oE-AIn" style="IBUITableViewCellStyleDefault" id="Uwn-WJ-sIC">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uwn-WJ-sIC" id="heA-2p-2np">
@@ -147,6 +157,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SaX-eI-u4E"/>
+        <segue reference="1ml-X0-1nS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,6 +18,7 @@
 		FCBE11EB234E844900781B10 /* BBBreedController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE11EA234E844900781B10 /* BBBreedController.m */; };
 		FCBE1242234FAD3800781B10 /* BBBreedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE1241234FAD3800781B10 /* BBBreedListTableViewController.swift */; };
 		FCBE1244234FAD9400781B10 /* BBSubbreedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE1243234FAD9400781B10 /* BBSubbreedListTableViewController.swift */; };
+		FCBE1246234FCEA800781B10 /* BBBreedImagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE1245234FCEA800781B10 /* BBBreedImagesCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FCBE1240234FAD3800781B10 /* Dogs-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dogs-C-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCBE1241234FAD3800781B10 /* BBBreedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBBreedListTableViewController.swift; sourceTree = "<group>"; };
 		FCBE1243234FAD9400781B10 /* BBSubbreedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSubbreedListTableViewController.swift; sourceTree = "<group>"; };
+		FCBE1245234FCEA800781B10 /* BBBreedImagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBBreedImagesCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				FCBE1241234FAD3800781B10 /* BBBreedListTableViewController.swift */,
 				FCBE1240234FAD3800781B10 /* Dogs-C-Bridging-Header.h */,
 				FCBE1243234FAD9400781B10 /* BBSubbreedListTableViewController.swift */,
+				FCBE1245234FCEA800781B10 /* BBBreedImagesCollectionViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				FCBE11EB234E844900781B10 /* BBBreedController.m in Sources */,
 				FCBE11C8234E6FA500781B10 /* AppDelegate.m in Sources */,
+				FCBE1246234FCEA800781B10 /* BBBreedImagesCollectionViewController.swift in Sources */,
 				FCBE11D9234E6FAF00781B10 /* main.m in Sources */,
 				FCBE11E3234E724300781B10 /* BBBreed.m in Sources */,
 				FCBE1242234FAD3800781B10 /* BBBreedListTableViewController.swift in Sources */,

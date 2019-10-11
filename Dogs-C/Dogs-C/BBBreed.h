@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BBSubbreed.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BBBreed : NSObject
 
 @property (nonatomic, copy, readonly)NSString *name;
-@property (nonatomic, copy, readonly, nullable)NSArray *subbreeds;
-@property (nonatomic, copy, readonly)NSArray *imageURLs;
+@property (nonatomic, copy, readonly)NSArray<BBSubbreed *> *subbreeds;
+@property (nonatomic, copy)NSArray *imageURLs;
 
 -(BBBreed *)initWithName:(NSString *)name
                 subbreeds:(NSArray<NSString *> *)subbreeds

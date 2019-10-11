@@ -10,13 +10,13 @@
 
 @implementation BBBreed
 
-- (BBBreed *)initWithName:(NSString *)name subbreeds:(NSArray *)subbreed imageURLs:(nonnull NSArray *)imageURLs
+- (BBBreed *)initWithName:(NSString *)name subbreeds:(NSArray<BBSubbreed *> *)subbreeds imageURLs:(NSArray<NSString *> *)imageURLs
 {
     self = [super init];
     if (self)
     {
         _name = name;
-        _subbreeds = subbreed;
+        _subbreeds = subbreeds;
         _imageURLs = imageURLs;
     }
     return self;

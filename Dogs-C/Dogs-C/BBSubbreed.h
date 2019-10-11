@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BBSubbreed : NSObject
 
 @property (nonatomic, copy, readonly)NSString *name;
-@property (nonatomic, copy, readonly)NSArray *imageURLs;
+@property (nonatomic, copy)NSArray *imageURLs;
 
 -(BBSubbreed *)initWithName:(NSString *)name
                   imageURLs:(NSArray<NSString *> *)imageURLs;

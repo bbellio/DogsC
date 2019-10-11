@@ -61,6 +61,7 @@ static NSString *const kbreedImagesComponent = @"images";
                     [arrayofSubbreeds addObject:subbreed];
                 }
                 BBBreed *breed = [[BBBreed alloc] initWithName:key subbreeds:arrayofSubbreeds imageURLs:[NSMutableArray new]];
+                
                 [arrayOfBreeds addObject:breed];
             }
             completion(arrayOfBreeds);

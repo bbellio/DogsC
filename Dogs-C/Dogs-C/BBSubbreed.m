@@ -10,7 +10,7 @@
 
 @implementation BBSubbreed
 
-- (BBSubbreed *)initWithName:(NSString *)name imageURLs:(NSArray *)imageURLs
+- (BBSubbreed *)initWithName:(NSString *)name imageURLs:(NSArray<NSString *> *)imageURLs
 {
     self = [super init];
     if (self)
